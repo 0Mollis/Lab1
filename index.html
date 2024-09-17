@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Сумма</title>
+	<script type="text/javascript">
+		function Piii() {
+			var NumInf = Number(document.forms["frm"].elements["NumInf"].value);
+			var NumX = Number(document.forms["frm"].elements["NumX"].value);
+			var Sum = 0;
+			for(var i = 1; i <= NumInf; i++)
+				{
+					Sum = Sum + (Math.pow(-1, i) * Math.pow(NumX, i))/facTor(i);
+				}
+			document.write(Sum);
+		}
+
+		function facTor(n){
+			var factorial = 1;
+			for(var i = 1; i <= n; i++){
+				factorial *= i;
+			}
+			return factorial
+		}
+	</script>
+</head>
+<body>
+<form id="frm">
+	<input type="text" id="NumInf" placeholder="Бесконечность">
+	<input type="text" id="NumX" placeholder="Икс">
+	<input type="submit" value="Отправить" onclick="Piii()">
+</form>
+</body>
+</html>
